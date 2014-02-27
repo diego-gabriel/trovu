@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trovu</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag    "application"%>
+  <%= stylesheet_link_tag	 "jcarousel"%>
+  <%= javascript_include_tag "application"%>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%=render 'header'%>
+
+<div id = "page">
+	<%= yield %>
+</div>
+
+<%=render 'footer'%>
+
+</body>
+</html>

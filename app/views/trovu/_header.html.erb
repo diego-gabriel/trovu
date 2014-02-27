@@ -1,0 +1,16 @@
+<div id = "header" class = "gradient">
+	
+	<div id = "headerCont">
+		<%=image_tag "logo.png", id: "logoImg"%>
+
+		<%= form_tag (search_path) do %>
+
+			<div id ="searcher">
+				<%=text_field_tag 'word', nil, placeholder: "Buscar..."%>
+				<%=submit_tag "", class: "submitSearch"%>
+			</div>
+
+		<%end%>
+	</div>
+
+</div>
