@@ -22,6 +22,11 @@
     height: 400px;
 }
 
+.jcarousel img{
+    height: 400px;
+    width: 600px;
+}
+
 .jcarousel ul {
     width: 20000em;
     position: relative;

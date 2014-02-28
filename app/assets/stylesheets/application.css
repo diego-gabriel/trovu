@@ -23,7 +23,9 @@ body{
 }
 
 div.gradient{
-	background-image: -webkit-gradient(
+
+	background-color: #CD1210; 
+	/*background-image: -webkit-gradient(
 		linear,
 		right top,
 		right bottom,
@@ -35,6 +37,7 @@ div.gradient{
 	background-image: -webkit-linear-gradient(bottom, #E33D48 34%, #7D0C1B 88%);
 	background-image: -ms-linear-gradient(bottom, #E33D48 34%, #7D0C1B 88%);
 	background-image: linear-gradient(to bottom, #E33D48 34%, #7D0C1B 88%);
+	*/
 }
 
 #headerCont{
@@ -83,5 +86,24 @@ input.submitSearch:hover{
 #footer{
 	height: 200px; 
 }
+
+#footerCont{
+	padding-top: 15px;
+	width: 920px;
+	position: relative;
+	margin: auto;
+}
+
+div.fColumn{
+	color: white;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+div.fColumn ul{
+	list-style: none;
+	padding: 10px;
+}
+
 
 
