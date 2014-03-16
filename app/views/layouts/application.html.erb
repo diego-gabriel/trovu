@@ -2,11 +2,10 @@
 <html>
 <head>
   <title>Trovu</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    "application"%>
-  <%= stylesheet_link_tag	 "jcarousel"%>
-  <script src = "/assets/application.js"></script>
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,7 +15,6 @@
 <div id = "page">
 	<%= yield %>
 </div>
-
 <%=render 'footer'%>
 
 </body>

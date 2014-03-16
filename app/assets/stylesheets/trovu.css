@@ -1,0 +1,117 @@
+body{
+	margin: auto;
+	min-width: 970px;
+	background: #DDC0C3;
+}
+div.clear{
+	clear:both;
+	height:0px;
+	overflow:hidden;
+	margin: 0px;
+}
+
+#page{
+	display: block;
+	width: 920px;
+	min-height: 320px;
+	padding: 30px;
+	margin: auto;
+	background-color: white;
+}
+
+#logoImg{
+	float: left;
+	margin-top: 30px;
+}
+
+#header{
+	height: 120px;
+}
+
+#mainMenu a{
+	margin-top: 95px;
+	margin-left: 30px;
+	color: #989898;
+	float: left;
+	font-size: 18px;
+	font-family: Arial;
+	font-style: bold;
+	text-decoration: none;
+}
+
+div.gradient{
+	background-color: #CD1210; 
+}
+
+#headerCont{
+	width: 960px;
+	margin: auto;
+}
+
+#searcher{
+	float: right;
+	width: auto;
+	margin-top: 30px;
+}
+#searcher input{
+	font-size: 20px;
+	height: 30px;
+}
+
+input#word{
+	font-size: 20px;
+	font-style: italic;
+	width: 200px;
+	padding-left: 18px;
+}
+
+input#word:focus{
+	font-style: normal;
+}
+
+input.submitSearch{
+	position: relative;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+	border: none;
+	background: none;
+	background-image: url(/assets/searchImg.png);
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+input.submitSearch:hover{
+	background-image: url(/assets/searchImgHover.png);
+}
+
+#footer{
+	height: 200px; 
+}
+
+#footerCont{
+	padding-top: 15px;
+	width: 920px;
+	position: relative;
+	margin: auto;
+}
+
+div.fColumn{
+	color: white;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+div.fColumn ul{
+	list-style: none;
+	padding: 10px;
+}
+
+#map-canvas{
+	height: 400px;
+	width: 400px;
+	float: right;
+
+}
+

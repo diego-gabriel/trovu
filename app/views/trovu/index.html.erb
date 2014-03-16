@@ -1,20 +1,13 @@
-<script type="text/javascript" src = "/assets/jcarousel.js"></script>
-<script type="text/javascript" src = "/assets/jcarousel.basic.js"></script>
-
-<div class="jcarousel-wrapper">             
-	<div class="jcarousel">
-        <ul>
-	    	<li><img src="/assets/slides/logo1.jpg" alt = ""></li>
-			<li><img src="/assets/slides/logo2.jpg" alt = ""></li>
-			<li><img src="/assets/slides/logo3.jpg" alt = ""></li>
-			<li><img src="/assets/slides/logo4.jpg" alt = ""></li>
-	    </ul>
-    </div>
-
-    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-    
-    <p class="jcarousel-pagination">
-        
-    </p>
+<div class = "index-side-menu-container">
+	<ul class = "index-side-menu">
+		<li> <span class = "index-side-menu-arrow">-></span> <%=link_to "Mas cercanos", controller: "trovu", action: "masCercanos"%></li>
+		<li> <span class = "index-side-menu-arrow">-></span> <%=link_to "Top 10", controller: "trovu", action: "top10"%></li>
+		<li> <span class = "index-side-menu-arrow">-></span> <%=link_to "Destacados", controller: "trovu", action: "destacados"%></li>
+		<li> <span class = "index-side-menu-arrow">-></span> <%=link_to "nuevos", controller: "trovu", action: "nuevos"%></li>
+	</ul>
 </div>
+
+<%= render "slider" %>
+
+
+<div class = "clear"></div><

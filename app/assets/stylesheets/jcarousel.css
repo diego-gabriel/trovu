@@ -1,7 +1,7 @@
 /*jCarousel*/
 .jcarousel-wrapper {
-    width: 600px;
-    height: 400px;
+    width: 480px;
+    height: 320px;
     margin: 20px auto;
     position: relative;
     border: 10px solid #fff;
@@ -18,13 +18,13 @@
 .jcarousel {
     position: relative;
     overflow: hidden;
-    width: 600px;
-    height: 400px;
+    width: 480px;
+    height: 320px;
 }
 
 .jcarousel img{
-    height: 400px;
-    width: 600px;
+    height: 320px;
+    width: 480px;
 }
 
 .jcarousel ul {

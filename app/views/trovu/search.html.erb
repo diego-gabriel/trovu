@@ -1,0 +1,31 @@
+<p>
+  Hola! soy Trovu, y tu buscaste: "<%= @cad %>"
+</p>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLE-I4mF-_-5om09EbV5NvcZwDozeAJIg&sensor=false">
+</script>
+<script type="text/javascript">
+	function initialize() {
+		var pos = new google.maps.LatLng(<%= @lat %>, <%= @lng %>);
+		var mapOptions = {
+			center: pos,
+			zoom: 16,
+			mapTypeControl: false,
+			streetViewControl: false
+		};
+		var map = new google.maps.Map(document.getElementById("map-canvas"),
+		    mapOptions);
+
+		var maker = new google.maps.Marker({
+			position: pos,
+			map: map,
+			title: "hello",
+			icon: "/assets/favicon.png"
+		});
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+<div id = "map-canvas"></div>
+<div class = "clear"></div>

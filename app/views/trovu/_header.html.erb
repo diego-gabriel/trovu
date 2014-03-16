@@ -1,9 +1,14 @@
 <div id = "header" class = "gradient">
 	
 	<div id = "headerCont">
-		<%=image_tag "logo.png", id: "logoImg"%>
+		<%= image_tag "logo.png", id: "logoImg"%>
 
-		<%= form_tag (search_path) do %>
+		<div id = "mainMenu">
+			<strong> <%= link_to "Almuerzo / Cena", controller: "trovu", action: "alCen"%> </strong>
+			<strong> <%= link_to "Desayuno / Merienda", controller: "trovu", action: "desMer"%> </strong>
+		</div>
+		
+		<%= form_tag "/search", method: "get" do %>
 
 			<div id ="searcher">
 				<%=text_field_tag 'word', nil, placeholder: "Buscar..."%>
@@ -14,3 +19,5 @@
 	</div>
 
 </div>
+
+<div calss = "clear"></div>
