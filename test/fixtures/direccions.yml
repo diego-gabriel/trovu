@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coordenadaX: 1
+  coordenadaY: 1
+  calle: MyString
+  sucursal_id: 1
+
+two:
+  coordenadaX: 1
+  coordenadaY: 1
+  calle: MyString
+  sucursal_id: 1
