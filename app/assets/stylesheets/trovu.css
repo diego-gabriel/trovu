@@ -15,6 +15,7 @@ div.clear{
 	width: 920px;
 	min-height: 320px;
 	padding: 30px;
+	padding-top: 40px;
 	margin: auto;
 	background-color: white;
 }
@@ -77,8 +78,7 @@ input.submitSearch{
 	border: none;
 	background: none;
 	background-image: url(/assets/searchImg.png);
-	background-size: 30px 30px;
-	background-position: center center;
+	background-position: center bottom;
 	background-repeat: no-repeat;
 }
 

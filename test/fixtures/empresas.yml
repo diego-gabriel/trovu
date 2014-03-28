@@ -1,7 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nomEmpresa: MyString
+  nombre: MyString
+  precioRelativo: 1
+  logotipo: MyString
+  estrellas: 1
+  codigoEmpresa: MyString
 
 two:
-  nomEmpresa: MyString
+  nombre: MyString
+  precioRelativo: 1
+  logotipo: MyString
+  estrellas: 1
+  codigoEmpresa: MyString

@@ -11,59 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318144616) do
-
-  create_table "categoria", force: true do |t|
-    t.string   "nomCategoria"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "direccions", force: true do |t|
-    t.integer  "coordenadaX"
-    t.integer  "coordenadaY"
-    t.string   "calle"
-    t.integer  "sucursal_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140328033832) do
 
   create_table "empresas", force: true do |t|
-    t.string   "nomEmpresa"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "horarios", force: true do |t|
-    t.integer  "sucursal_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "publicidads", force: true do |t|
-    t.integer  "empresa_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sub_categoria", force: true do |t|
-    t.string   "nomSubcategoria"
-    t.integer  "empresa_id"
-    t.integer  "categoria_id"
+    t.string   "nombre"
+    t.integer  "precioRelativo"
+    t.string   "logotipo"
+    t.integer  "estrellas"
+    t.string   "codigoEmpresa"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sucursals", force: true do |t|
-    t.integer  "empresa_id"
-    t.integer  "numero"
+    t.text     "direccion"
+    t.decimal  "latitud"
+    t.decimal  "longitud"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "telefonos", force: true do |t|
     t.integer  "numero"
-    t.integer  "sucursal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "turnos", force: true do |t|
+    t.string   "dia"
+    t.integer  "horaInicio"
+    t.integer  "horaFin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

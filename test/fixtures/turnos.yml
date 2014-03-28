@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nomSubcategoria: MyString
+  dia: MyString
+  horaInicio: 1
+  horaFin: 1
 
 two:
-  nomSubcategoria: MyString
+  dia: MyString
+  horaInicio: 1
+  horaFin: 1

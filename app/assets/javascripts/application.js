@@ -1,3 +1,3 @@
-//= require jcarousel
-//= require jcarousel.basic
+//= require slides
+//= require slides.config
 //= require_tree
