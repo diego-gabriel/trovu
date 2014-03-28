@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechaInicio: 2014-03-28
+  descripcion: MyText
+  precio: 9.99
+  idPublicidad: MyString
+  imagen: MyString
+  periodo: 1
+
+two:
+  fechaInicio: 2014-03-28
+  descripcion: MyText
+  precio: 9.99
+  idPublicidad: MyString
+  imagen: MyString
+  periodo: 1

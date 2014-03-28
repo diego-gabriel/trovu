@@ -4,7 +4,7 @@ class CreateSucursals < ActiveRecord::Migration
       t.text :direccion
       t.decimal :latitud
       t.decimal :longitud
-
+      t.integer :codigoSucursal
       t.timestamps
     end
   end
