@@ -4,7 +4,8 @@ class CreateTurnos < ActiveRecord::Migration
       t.string :dia
       t.integer :horaInicio
       t.integer :horaFin
-
+      t.references :turno, index: true
+      
       t.timestamps
     end
   end

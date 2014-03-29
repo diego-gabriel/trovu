@@ -1,12 +1,12 @@
-class CreatePublicidads < ActiveRecord::Migration
+class CreatePublicities < ActiveRecord::Migration
   def change
-    create_table :publicidads do |t|
+    create_table :publicities do |t|
       t.date :fechaInicio
       t.text :descripcion
       t.decimal :precio
-      t.string :idPublicidad
       t.string :imagen
       t.integer :periodo
+      t.references :empresa, index: true
 
       t.timestamps
     end

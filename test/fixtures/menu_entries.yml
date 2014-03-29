@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plato: MyString
+  descripcion: MyText
+  precio: 9.99
+  sucursal_id: 
+
+two:
+  plato: MyString
+  descripcion: MyText
+  precio: 9.99
+  sucursal_id: 

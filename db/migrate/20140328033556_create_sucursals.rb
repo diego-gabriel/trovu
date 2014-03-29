@@ -5,6 +5,8 @@ class CreateSucursals < ActiveRecord::Migration
       t.decimal :latitud
       t.decimal :longitud
       t.integer :codigoSucursal
+      t.references :empresa, index: true
+      
       t.timestamps
     end
   end
