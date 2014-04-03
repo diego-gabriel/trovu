@@ -101,6 +101,11 @@ div.fColumn{
 	color: white;
 	font-family: Arial;
 	font-size: 12px;
+	float: left;
+	margin-left: 50px;
+	link: white;
+	vlink: white;
+	alink: red;
 }
 
 div.fColumn ul{

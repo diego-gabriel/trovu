@@ -37,4 +37,16 @@ class TrovuController < ApplicationController
   	@lng = -66.15442
   end
 
+  def conocenos
+  end
+
+  def legal
+  end
+  def contactanos
+  end
+  def faq
+  end
+  def locales
+  end
+
 end
