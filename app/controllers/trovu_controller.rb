@@ -29,10 +29,7 @@ class TrovuController < ApplicationController
 
   def search
   	word = params[:word]
-    @cad = Empresa.find_by nombre: word
-    if @cad = "" then @cad = "lo siento, no se encontraron empresas llamadas: " + word
-    end
-
+    @empresa = Empresa.find_by(nombre: word)
   	@lat = -17.38533
   	@lng = -66.15442
   end

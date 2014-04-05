@@ -1,7 +1,7 @@
 <div id = "header" class = "gradient">
 	
 	<div id = "headerCont">
-		<%= image_tag "logo.png", id: "logoImg"%>
+		<%= link_to (image_tag "logo.png", id: "logoImg"), controller: "trovu", action: "index"%>
 
 		<div id = "mainMenu">
 			<strong> <%= link_to "Almuerzo / Cena", controller: "trovu", action: "alCen"%> </strong>

@@ -6,6 +6,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :logotipo
       t.integer :estrellas
       t.string :codigoEmpresa
+      t.string :paginaWeb
 
       t.timestamps
     end

@@ -2,5 +2,6 @@
 *= require trovu
 *= require slides
 *= require index
+*= require search
 *= require_tree
 */

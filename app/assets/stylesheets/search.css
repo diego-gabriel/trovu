@@ -1,0 +1,42 @@
+#accordion {
+	float: left;
+	font-family: Arial;
+	width: 450px;
+}
+#accordion h3{
+
+	background-color: #CD1210;
+	font-size: 18px;
+	color: #dddddd;
+	padding: 10px 5px 5px 30px;
+	border: 2px solid #444444;
+	border-radius: 5px 5px 0px 0px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+
+#accordion h3:hover{
+	background-color: #AB110F;
+	border-color: #000000;
+}
+
+#accordion div{
+	display: none;
+	padding: 10px 20px 10px 10px;
+	margin: 0px;
+	border: 2px solid  #444444;
+	border-top: none;
+	border-radius: 0px 0px 5px 5px;
+}
+
+#accordion p{
+	margin: 0px;
+}
+
+#map-canvas{
+	height: 400px;
+	width: 400px;
+	float: right;
+
+}
+
