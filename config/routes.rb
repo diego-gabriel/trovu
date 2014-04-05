@@ -6,6 +6,11 @@ Trovu::Application.routes.draw do
   get "/top10" => "trovu#top10"
   get "/destacados" => "trovu#destacados"
   get "/nuevos" => "trovu#nuevos"
+  get "/conocenos" => "trovu#conocenos"
+  get "/legal" => "trovu#legal"
+  get "/contactanos" => "trovu#contactanos"
+  get "/faq" => "trovu#faq"
+  get "/locales" => "trovu#locales"
   match '/search', to: 'trovu#search', via: "get"
   root "trovu#index"
 end
