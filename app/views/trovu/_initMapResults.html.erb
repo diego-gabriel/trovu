@@ -1,0 +1,103 @@
+
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLE-I4mF-_-5om09EbV5NvcZwDozeAJIg&sensor=false">
+</script>
+
+<script type="text/javascript">
+	function initialize() {
+
+		var latProm, lngProm, sucCount;
+		latProm = lngProm = sucCount = 0;
+
+		<% @empresas.each do |e|%>
+			<% e.sucursals.each do |s|%>
+
+				latProm += <%= s.latitud %>;
+				lngProm += <%= s.longitud %>;
+				sucCount++;
+			<% end %>
+		<% end %>
+
+		latProm /= sucCount;
+		lngProm /= sucCount;
+
+		var mapOptions = {
+			center: new google.maps.LatLng(latProm, lngProm),
+			zoom: 16,
+			mapTypeControl: false,
+			streetViewControl: false
+		};
+
+		var map = new google.maps.Map(document.getElementById("map-canvas"),
+		    mapOptions);
+
+		var initMarkerBounce = function (marker){
+
+			console.log("iniciando bounce");
+
+		    if (marker.getAnimation() == null || typeof marker.getAnimation() === 'undefined') {
+
+		        clearTimeout(bounceTimer);
+
+		        bounceTimer = setTimeout(function(){
+		             marker.setAnimation(google.maps.Animation.BOUNCE);
+		        },
+		        250);
+	    	}
+		}
+
+		var stopMarkerBounce = function (marker){
+
+			if (marker.getAnimation() != null) {
+		   	   	marker.setAnimation(null);
+		    }	
+		    clearTimeout(bounceTimer);
+		}
+
+		var marker = new Array();
+		var i = 0;
+		<% @empresas.each do |e|%>
+			
+			<% e.sucursals.each do |s|%>
+
+				marker[i] = new google.maps.Marker({
+					position: new google.maps.LatLng(<%= s.latitud %>, <%= s.longitud %>),
+					map: map,
+					title: "<%=e.nombre%>",
+					icon: "/assets/favicon.png"
+				});
+
+
+				var bounceTimer;	
+				google.maps.event.addListener(marker[i], 'mouseover', function() {
+
+					initMarkerBounce(this);
+				});
+
+				google.maps.event.addListener(marker[i], 'mouseout', function() {
+				    stopMarkerBounce(this);
+				});
+				console.log(marker[i].title);//por pruebas solamente
+				i++;
+			<% end %>
+		<% end %>
+
+		i = 0;
+		$("#accordion h3").each(function(){
+			
+			var that = marker[i];
+				console.log(i + "lelo " +  this.innerHTML + " " +  that.title);
+			this.onmouseover = function(){
+				initMarkerBounce(that);
+			}
+			this.onmouseout = function(){
+				stopMarkerBounce(that);
+			}
+			i++;
+				console.log(i + "lelo " +  this.innerHTML);
+		});
+
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

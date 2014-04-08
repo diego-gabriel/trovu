@@ -1,6 +1,6 @@
 body{
 	margin: auto;
-	min-width: 970px;
+	min-width: 1000px;
 	background: #DDC0C3;
 }
 div.clear{
@@ -23,21 +23,28 @@ div.clear{
 #logoImg{
 	float: left;
 	margin-top: 30px;
+	margin-bottom: -37px;
 }
 
 #header{
-	height: 120px;
+	height: 120px;	
 }
 
 #mainMenu a{
-	margin-top: 95px;
-	margin-left: 30px;
-	color: #989898;
+	margin-top: 80px;
+	margin-left: 15px;
+	padding: 5px;
+	border-radius: 10px;
+	color: #ffffff;
 	float: left;
 	font-size: 18px;
 	font-family: Arial;
 	font-style: bold;
 	text-decoration: none;
+}
+
+#mainMenu a:hover{
+	background-color: #AB110F;
 }
 
 div.gradient{

@@ -11,7 +11,7 @@
 		<%= form_tag "/search", method: "get" do %>
 
 			<div id ="searcher">
-				<%=text_field_tag 'word', nil, placeholder: "Buscar..."%>
+				<%=text_field_tag 'word', nil, placeholder: "Buscar...", required: true%>
 				<%=submit_tag " ", class: "submitSearch"%>
 			</div>
 
@@ -20,4 +20,4 @@
 
 </div>
 
-<div calss = "clear"></div>
+<div class = "clear"></div>

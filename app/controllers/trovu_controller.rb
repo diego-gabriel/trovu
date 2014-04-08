@@ -29,7 +29,7 @@ class TrovuController < ApplicationController
 
   def search
   	word = params[:word]
-    @empresa = Empresa.find_by(nombre: word)
+    @empresas = Empresa.all
   	@lat = -17.38533
   	@lng = -66.15442
   end

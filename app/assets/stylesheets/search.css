@@ -20,6 +20,12 @@
 	border-color: #000000;
 }
 
+#accordion h3:active{
+	background-color: #777777;
+	color: black;
+}
+
+
 #accordion div{
 	display: none;
 	padding: 10px 20px 10px 10px;
@@ -27,6 +33,16 @@
 	border: 2px solid  #444444;
 	border-top: none;
 	border-radius: 0px 0px 5px 5px;
+}
+
+#accordion div img{
+	float: right;
+	width: 200px;
+	z-index: -10;
+}
+
+#accordion.e-description h4{
+	float: left;
 }
 
 #accordion p{

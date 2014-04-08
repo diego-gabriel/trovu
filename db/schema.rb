@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140329042015) do
     t.string   "logotipo"
     t.integer  "estrellas"
     t.string   "codigoEmpresa"
+    t.string   "paginaWeb"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -97,11 +98,11 @@ ActiveRecord::Schema.define(version: 20140329042015) do
     t.string   "dia"
     t.integer  "horaInicio"
     t.integer  "horaFin"
-    t.integer  "turno_id"
+    t.integer  "sucursal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "turnos", ["turno_id"], name: "index_turnos_on_turno_id"
+  add_index "turnos", ["sucursal_id"], name: "index_turnos_on_sucursal_id"
 
 end

@@ -1,0 +1,13 @@
+<% @empresas.each do |e| %>
+
+	<h3 class = "empresa"> <%= e.nombre%> </h3>
+
+	<div class = "e-description"> 
+
+		<%= image_tag e.logotipo, id: "e-logo"%>
+		<% e.sucursals.each do |s| %>
+			<h4>Sucursal nº <%=s.id%> </h4>
+			<p><%= s.direccion %> </p>
+		<% end %> 
+	</div>
+<% end %>
