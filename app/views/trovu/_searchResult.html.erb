@@ -1,13 +1,25 @@
 <% @empresas.each do |e| %>
 
-	<h3 class = "empresa"> <%= e.nombre%> </h3>
+	<h3 class = "empresa"> <%= e.nombre%> 
+		
+		<%= image_tag "stars/"+e.estrellas.to_s+"stars.png", class: "star"%>
+	</h3>
 
-	<div class = "e-description"> 
+	<div class = "e-description" style = "background-image: url( /assets/<%=e.logotipo %> ); background-position: center center; background-repeat: no-repeat;"> 
 
-		<%= image_tag e.logotipo, id: "e-logo"%>
-		<% e.sucursals.each do |s| %>
-			<h4>Sucursal nº <%=s.id%> </h4>
-			<p><%= s.direccion %> </p>
+		
+		<% e.sucursals.each do |s| %>	
+			<p>
+				<strong> Sucursal nº <%=s.id%>: </strong> 
+				<%= s.direccion %> 
+			</p>
+			<p><strong> Telefono(s): </strong> 
+				<% s.telefonos.each do |t| %>
+					<%= t.numero.to_s  + " / "%>
+				<% end %>
+			</p>
 		<% end %> 
+
+		<a class = "e-web" href="//<%=e.paginaWeb%>"><%=e.paginaWeb%></a>
 	</div>
 <% end %>
