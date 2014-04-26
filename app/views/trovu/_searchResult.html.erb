@@ -9,15 +9,18 @@
 
 		
 		<% e.sucursals.each do |s| %>	
-			<p>
-				<strong> Sucursal nº <%=s.id%>: </strong> 
-				<%= s.direccion %> 
-			</p>
-			<p><strong> Telefono(s): </strong> 
-				<% s.telefonos.each do |t| %>
-					<%= t.numero.to_s  + " / "%>
-				<% end %>
-			</p>
+			<div class = "s-description">
+				<p>
+					<strong> Sucursal nº <%=s.id%>: </strong> 
+					<%= s.direccion %> 
+				</p>
+				<p><strong> Telefono(s): </strong> 
+					<% s.telefonos.each do |t| %>
+						<%= t.numero.to_s  + " / "%>
+					<% end %>
+				</p>
+				<br>
+			</div>
 		<% end %> 
 
 		<a class = "e-web" href="//<%=e.paginaWeb%>"><%=e.paginaWeb%></a>
