@@ -9,7 +9,7 @@
 #DEBEMOS CATEGORIZAR EL PLATO y dar opcion a columnas de menu
 
 catComidas = Category.create(nombre: "Comidas")
-subcatRestaurat = SubCategory.create(nombre: "restaurant", category: catComidas)
+subcatRestaurat = SubCategory.create(nombre: "Almuerzo-Cena", category: catComidas)
 
 paprika = Empresa.create(nombre: "paprika", precioRelativo: 2.3, logotipo: "logoPaprika.png", estrellas: 4, paginaWeb: "www.paprika.com")
 paprikaSuc1 = Sucursal.create(direccion: "calle la paz esq. antezana",

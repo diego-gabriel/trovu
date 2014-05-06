@@ -4,33 +4,35 @@ class TrovuController < ApplicationController
   end
 
   def alCen
-  	
+    #IMPLEMENTAR EL QUERY! PINGU! :(
+  	#@empresas = SubCategory.find_by(nombre: 'Almuerzo-Cena').category.empresas
+    @empresas = Empresa.all
   end
 
   def desMer
-  	
+  	@empresas = Empresa.all
   end
 
   def masCercanos
-  	
+  	@empresas = Empresa.all
   end
 
   def top10
-  	
+  	@empresas = Empresa.all
   end
 
   def destacados
-  	
+  	@empresas = Empresa.all
   end
 
   def nuevos
-  	
+  	@empresas = Empresa.all
   end
 
   def search
   	word = params[:word]
     word = word.downcase
-    @empresas = Empresa.all.find_all{|e| lDistance(e.nombre, word) <= 3}
+    @empresas = Empresa.find(:all, :conditions => ["nombre LIKE ?", prepare(word)])
   	@lat = -17.38533
   	@lng = -66.15442
   end
@@ -47,41 +49,16 @@ class TrovuController < ApplicationController
   def locales
   end
 
-  private def lDistance(cad, word)
-    require 'matrix'
-    res = 0;
-    dist = []
+  private def prepare(word)
 
-    for i in 0..(cad.size)
-      dist[i] = []
-      for j in 0..(word.size)
-        dist[i][j] = 0
-      end
-    end
-    
-    for i in 0..(cad.size)
-      dist[i] = []
-      dist[i][0] = i
-    end
+    res = "%"
 
-    for j in 0..(word.size)
-      dist[0][j] = j
+    word.each_char do |k|
+      res = res + k + '%'
     end
-
-    for i in 0..(cad.size)
-      for j in 0..(word.size)
-        cost = 1
-        if cad[i] == word[j] then cost = 0
-        end
-        dist[i][j] = [dist[i-1][j] +1,
-                         dist[i][j-1] +1,
-                         dist[i-1][j-1]+cost].min
-      end      
-    end
-
-    res = dist[cad.size][word.size]
 
     return res
   end
+
 
 end
