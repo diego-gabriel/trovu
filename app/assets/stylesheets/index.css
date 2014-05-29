@@ -5,7 +5,6 @@ div.index-side-menu-container{
 
 ul.index-side-menu{
 	margin-right: 20px;
-	font-family: Arial;
 	list-style: none;
 	margin-top: 50px;
 	padding: 0px;
@@ -18,17 +17,19 @@ ul.index-side-menu li{
 }
 
 ul.index-side-menu a{
-	background: url(/assets/index-side-menu/arrow4.png) no-repeat center left;
+	background: url(/assets/favicon.png) no-repeat center left;
+	background-color: #CD1210;
 	display: block;
 	height: 30px;
 	font-size: 20px;
 	padding: 10px 5px 5px 35px;
-	border: 2px solid #444444;
+	border: 2px solid #222222;
 	border-radius: 25px;
-	color: black;
+	color: #eeeeee;
 	text-decoration: none;
 }
 
 ul.index-side-menu a:hover{
-	background-color: #dddddd;
+	color: #eeeeee;
+	background-color: #AB110F;
 }

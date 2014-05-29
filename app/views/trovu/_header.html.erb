@@ -2,11 +2,6 @@
 	
 	<div id = "headerCont">
 		<%= link_to (image_tag "logo.png", id: "logoImg"), controller: "trovu", action: "index"%>
-
-		<div id = "mainMenu">
-			<strong> <%= link_to "Almuerzo / Cena", controller: "trovu", action: "alCen"%> </strong>
-			<strong> <%= link_to "Desayuno / Merienda", controller: "trovu", action: "desMer"%> </strong>
-		</div>
 		
 		<%= form_tag "/search", method: "get" do %>
 
@@ -16,6 +11,20 @@
 			</div>
 
 		<%end%>
+
+		<ul id = "mainMenu">
+			 <li><strong><%= link_to "Almuerzo / Cena", controller: "trovu", action: "alCen"%> </strong>
+				<ul class = "hiddenMenu">
+					<div>
+						<li>Restaurantes</li>
+						<li>Pensiones</li>
+						<li>Snacks</li>
+						<li>Helderias</li>
+					</div>
+				</ul>
+			</li>
+			<li><strong> <%= link_to "Desayuno / Merienda", controller: "trovu", action: "desMer"%> </strong></li>
+		</ul>
 	</div>
 
 </div>

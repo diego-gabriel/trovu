@@ -1,4 +1,6 @@
 body{
+	font-family: 'Lato', sans-serif;
+	font-style: bold;
 	margin: auto;
 	min-width: 1000px;
 	background: #DDC0C3;
@@ -29,16 +31,41 @@ div.clear{
 #header{
 	height: 120px;	
 }
+#mainMenu{
+	list-style: none;
+	margin: 0px;
+}
+
+#mainMenu li{
+	position: relative;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+#mainMenu .hiddenMenu{
+	position: absolute;
+	width:700px; 
+	list-style: none;
+	padding: 0px;
+	margin-top: 120px;
+	z-index: 20;
+}
+#mainMenu .hiddenMenu li{
+	position: relative;
+	padding: 5px;
+	float: left;
+	margin-top: 0px;
+}
 
 #mainMenu a{
 	margin-top: 80px;
 	margin-left: 15px;
 	padding: 5px;
 	border-radius: 10px;
-	color: #ffffff;
+	color: #eeeeee;
 	float: left;
 	font-size: 18px;
-	font-family: Arial;
 	font-style: bold;
 	text-decoration: none;
 }
@@ -48,7 +75,7 @@ div.clear{
 }
 
 div.gradient{
-	background-color: #CD1210; 
+	background-color: #CD1210; /* Color de header */
 }
 
 #headerCont{
@@ -104,10 +131,14 @@ input.submitSearch:hover{
 	margin: auto;
 }
 
+#footer a{
+	color: #ffffff;
+	text-decoration: none;
+}
+
 div.fColumn{
 	color: white;
-	font-family: Arial;
-	font-size: 12px;
+	font-size: 15px;
 	float: left;
 	margin-left: 50px;
 	link: white;
