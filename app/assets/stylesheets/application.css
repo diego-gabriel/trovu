@@ -3,5 +3,6 @@
 *= require slides
 *= require index
 *= require search
+*= require info
 *= require_tree
 */

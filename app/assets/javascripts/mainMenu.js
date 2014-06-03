@@ -1,8 +1,9 @@
 $(function(){
-	$(".hiddenMenu div").hide();
-	$("#mainMenu a").hover(toggleMain, toggleMain);
+	$(".hiddenMenu").hide();
+	$("#mainMenu li").hover(toggleMain, toggleMain);
 
 	function toggleMain(){
-		$(".hiddenMenu div").slideToggle();		
+		$(this).find("div").stop().slideToggle();
+		$(this).find("strong a").toggleClass("hovered");		
 	}
 });

@@ -1,0 +1,16 @@
+h1.title{
+	text-align: center;
+	color: #CD1210;
+}
+
+p.blue-description{
+	color: blue;
+}
+
+ p.jutified{
+ 	text-align: justify;
+ }
+
+p.centered{
+	text-align: center;
+}

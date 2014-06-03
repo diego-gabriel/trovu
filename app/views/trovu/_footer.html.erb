@@ -22,8 +22,9 @@
 		<div class = "fColumn">
 			<p><%=link_to "Legal", controller: "trovu", action: "legal"%></p>
 			<ul>
-				<li>Privacidad</li>
-				<li>Cositas</li>
+				<li><%=link_to "Condiciones de uso", controller: "trovu", action: "legal", id: "condiciones-uso"%></li>
+				<li><%=link_to "Politica de privacidad - Usuarios", controller: "trovu", action: "legal", anchor: "privacidad-usuario"%></li>
+				<li><%=link_to "Politica de privacidad - Empresas", controller: "trovu", action: "legal", anchor: "privacidad-empresas"%></li>
 			</ul>
 		</div>
 

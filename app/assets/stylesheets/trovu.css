@@ -40,29 +40,32 @@ div.clear{
 	position: relative;
 	float: left;
 	margin: 0px;
+	margin-top: 86px;
 	padding: 0px;
 }
 
 #mainMenu .hiddenMenu{
 	position: absolute;
-	width:700px; 
-	list-style: none;
-	padding: 0px;
-	margin-top: 120px;
+	margin-top: 2px;
 	z-index: 20;
 }
-#mainMenu .hiddenMenu li{
+
+#mainMenu .hiddenMenu td{
 	position: relative;
-	padding: 5px;
-	float: left;
-	margin-top: 0px;
+	padding: 7px;
+	width: 100px;
+	margin-top: 32px;
 }
 
 #mainMenu a{
-	margin-top: 80px;
+	position: relative;
+	z-index: 30;
+	margin-top: 0px;
 	margin-left: 15px;
 	padding: 5px;
-	border-radius: 10px;
+	border-radius: 10px 10px 0px 0px;
+	border: 2px solid #AB110F;
+	border-bottom: 0px;
 	color: #eeeeee;
 	float: left;
 	font-size: 18px;
@@ -70,8 +73,21 @@ div.clear{
 	text-decoration: none;
 }
 
-#mainMenu a:hover{
+#mainMenu a:hover, #mainMenu a.hovered,
+div.fColumn a:hover{
 	background-color: #AB110F;
+}
+
+.hiddenMenuContainer{
+	color: #eeeeee;
+	margin-top: 32px;
+	padding: 5px;
+	background-color: #AB110F;
+	border-radius: 0px 0px 10px 10px
+}
+
+.hiddenMenuContainer td:hover{
+	background-color: #CD1210;
 }
 
 div.gradient{
@@ -120,6 +136,10 @@ input.submitSearch:hover{
 	background-image: url(/assets/searchImgHover.png);
 }
 
+.fb-like{
+	margin-top: 15px;
+}
+
 #footer{
 	height: 200px; 
 }
@@ -140,7 +160,7 @@ div.fColumn{
 	color: white;
 	font-size: 15px;
 	float: left;
-	margin-left: 50px;
+	margin-left: 20px;
 	link: white;
 	vlink: white;
 	alink: red;

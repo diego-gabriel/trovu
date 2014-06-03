@@ -14,16 +14,44 @@
 
 		<ul id = "mainMenu">
 			 <li><strong><%= link_to "Almuerzo / Cena", controller: "trovu", action: "alCen"%> </strong>
-				<ul class = "hiddenMenu">
-					<div>
-						<li>Restaurantes</li>
-						<li>Pensiones</li>
-						<li>Snacks</li>
-						<li>Helderias</li>
-					</div>
-				</ul>
+				<div class = "hiddenMenu">
+					<table class = "hiddenMenuContainer">
+						<tr>
+							<td>Restaurantes</td>
+							<td>Pensiones</td>
+							<td>Snacks</td>
+							<td>Helderias</td>
+							<td>Confiterias</td>
+						</tr>
+						<tr>
+							<td>Cafes</td>
+							<td>Pollo</td>
+							<td>Fast Food</td>
+							<td>Plaza de Comida</td>
+							<td>Tradicional</td>
+						</tr>
+					</table>
+				</div>
 			</li>
-			<li><strong> <%= link_to "Desayuno / Merienda", controller: "trovu", action: "desMer"%> </strong></li>
+			<li><strong> <%= link_to "Desayuno / Merienda", controller: "trovu", action: "desMer"%> </strong>
+				<div class = "hiddenMenu">
+					<table class = "hiddenMenuContainer">
+						<tr>
+							<td>Salteñeria</td>
+							<td>Empanadas</td>
+							<td>Reposteria</td>
+							<td>Snack</td>
+						</tr>
+						<tr>
+							<td>Cafes</td>
+							<td>Tucumanas</td>
+							<td>Panaderia</td>
+							<td>Heladeria</td>
+						</tr>
+					</table>
+				</div>
+
+			</li>
 		</ul>
 	</div>
 
