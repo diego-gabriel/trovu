@@ -1,0 +1,12 @@
+<h2>Gestor de empresas afiliadas</h2>
+
+<%@empresas.each do |e|%>
+
+	<div class = "adm-empresa">
+		<p><strong><%=e.nombre%></strong></p>
+		<button type = "button" class = "adm-eraseButton">Eliminar</button>
+	</div>
+
+<%end%>
+<br><br>
+<%=link_to "Afiliar Nueva Empresa", controller: "admin", action: "newEnterprise"%>
