@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140329042015) do
   add_index "categorizations", ["sucursal_id"], name: "index_categorizations_on_sucursal_id"
 
   create_table "empresas", force: true do |t|
+    t.string   "direccion"
     t.string   "nombre"
     t.integer  "precioRelativo"
     t.string   "logotipo"

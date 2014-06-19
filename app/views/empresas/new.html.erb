@@ -1,0 +1,68 @@
+<%=form_for :empresa do |f|%>
+  <% @f = f %>
+  <%=render "newScript"%>
+  <h3>Datos de la Empresa</h3>
+  <table>
+  	<tr>
+      <td><%=f.label :name, "Nombre:" %></td>
+  	  <td><%=f.text_field :name%></td>
+  	</tr>
+  	<tr>
+  	  <td><%=f.label :direccion, "Direccion:"%></td>
+  	  <td><%=f.text_field :direccion%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :precioRelativo, "Precio Promedio:"%></td>
+  		<td><%=f.text_field :precioRelativo%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :categoria, "Categoria"%></td>
+  		<td><%=select_tag :categoria, options_for_select([["-- Selecciona Categoria --", "..."],["Almuerzo/Cena", "Almuerzo/Cena"],["Desayuno/Merienda", "Desayuno/Merienda"]]), :onchange => "subCategoryChange()"%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :subCategoria, "SubCategoria:"%></td>
+  		<td><div id = "subCategoria"></div></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :telefono, "Telefono:"%></td>
+  		<td><%=f.text_field :telefono%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :celular, "Celular:"%></td>
+  		<td><%=f.text_field :celular%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :webPage, "Pagina Web"%></td>
+  		<td><%=f.text_field :webPage%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :facebook, "Facebook"%></td>
+  		<td><%=f.text_field :facebook%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :twitter, "Twitter"%></td>
+  		<td><%=f.text_field :twitter%></td>
+  	</tr>
+  	<tr></tr>
+  </table>
+
+  <h3>Datos del Responsable</h3>
+  <table>
+  	<tr>
+  		<td><%=f.label :responsable, "Responsable a cargo:"%></td>
+  		<td><%=f.text_field :responsable%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :telefonoResp, "Telefono:"%></td>
+  		<td><%=f.text_field :telefonoResp%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :celularResp, "Celular:"%></td>
+  		<td><%=f.text_field :celularResp%></td>
+  	</tr>
+  	<tr>
+  		<td><%=f.label :emailResp, "E-mail:"%></td>
+  		<td><%=f.text_field :emailResp%></td>
+  	</tr>
+  </table>
+<% end %>

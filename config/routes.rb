@@ -13,7 +13,6 @@ Trovu::Application.routes.draw do
   get "/contactanos" => "trovu#contactanos"
   get "/faq" => "trovu#faq"
   get "/locales" => "trovu#locales"
-  get "/iw87u3h70928u37yqubkdn" => "admin#newEnterprise"
   match '/search', to: 'trovu#search', via: "get"
   root "trovu#index"
 end

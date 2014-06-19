@@ -1,0 +1,11 @@
+<script type="text/javascript">
+function subCategoryChange(){
+	var subCategoria = document.getElementById("subCategoria");
+	var categoria = document.getElementById("categoria").value;
+	subCategoria.innerHTML = "";
+	if (categoria === "Almuerzo/Cena")
+		subCategoria.innerHTML = '<%=render "almuerzoCena"%>';
+	if (categoria === "Desayuno/Merienda")
+		subCategoria.innerHTML = '<%=render "desayunoMerienda"%>';
+}
+</script>
