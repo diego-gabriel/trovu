@@ -8,9 +8,29 @@
 
 #DEBEMOS CATEGORIZAR EL PLATO y dar opcion a columnas de menu
 
-catComidas = Category.create(nombre: "Comidas")
-subcatRestaurat = SubCategory.create(nombre: "Almuerzo-Cena", category: catComidas)
+catAlmCen = Category.create(nombre: "Almuerzo/Cena")
+restaurante = SubCategory.create(nombre: "restaurante", category: catAlmCen)
+pension = SubCategory.create(nombre: "pension", category: catAlmCen)
+snack = SubCategory.create(nombre: "snack", category: catAlmCen)
+heladeria = SubCategory.create(nombre: "heladeria", category: catAlmCen)
+confiteria = SubCategory.create(nombre: "heladeria", category: catAlmCen)
+cafe = SubCategory.create(nombre: "cafe", category: catAlmCen)
+pollo = SubCategory.create(nombre: "pollo", category: catAlmCen)
+fast_food = SubCategory.create(nombre: "fast_food", category: catAlmCen)
+plaza_de_comidas = SubCategory.create(nombre: "plaza_de_comidas", category: catAlmCen)
+tradicional = SubCategory.create(nombre: "tradicional", category: catAlmCen)
 
+catDesMer = Category.create(nombre: "Desayuno/Merienda")
+saltenheria = SubCategory.create(nombre: "Salteñeria", category: catDesMer)
+empanadas = SubCategory.create(nombre: "empanadas", category: catDesMer)
+reposteria = SubCategory.create(nombre: "reposteria", category: catDesMer)
+snackD = SubCategory.create(nombre: "snack", category: catDesMer)
+cafeD = SubCategory.create(nombre: "cafe", category: catDesMer)
+tucumanas = SubCategory.create(nombre: "tucumanas", category: catDesMer)
+panaderia = SubCategory.create(nombre: "panaderia", category: catDesMer)
+heladeriaD = SubCategory.create(nombre: "heladeria", category: catDesMer)
+
+=begin
 paprika = Empresa.create(nombre: "paprika", precioRelativo: 2.3, logotipo: "logoPaprika.png", estrellas: 4, paginaWeb: "www.paprika.com")
 paprikaSuc1 = Sucursal.create(direccion: "calle la paz esq. antezana",
 	latitud: -17.38533, longitud: -66.15442, empresa: paprika)
@@ -51,3 +71,4 @@ MenuEntry.create(plato: "sandwich philadelfia", descripcion: "rico sandwich",
 Turno.create(dia: "martes", horaInicio: 900, horaFin: 2300, sucursal: dumboSuc2)
 Telefono.create(numero: 987654, sucursal: dumboSuc2)
 Publicity.create(descripcion: "estrellas", precio: 60, imagen: "", periodo: 6, empresa: dumbo)
+=end

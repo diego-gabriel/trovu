@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20140329042015) do
     t.integer  "estrellas"
     t.string   "codigoEmpresa"
     t.string   "paginaWeb"
+    t.string   "facebook"
+    t.string   "twitter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
