@@ -3,10 +3,15 @@
 <%@empresas.each do |e|%>
 
 	<div class = "adm-empresa">
-		<p><strong><%=e.nombre%></strong></p>
-		<button type = "button" class = "adm-eraseButton">Eliminar</button>
+		<h3><%=e.nombre%></h3>
+		<%=image_tag e.logotipo.url(:mini)%><br>
+		<%=link_to 'Ver', empresa_path(e)%>
+		<%=link_to 'Editar', edit_empresa_path(e)%>
+		<%=button_to 'Delete', empresa_path(e), method: :delete, data: {confirm: "esta seguro?"}%>
+
 	</div>
 
 <%end%>
+
 <br><br>
 <%=link_to "Afiliar Nueva Empresa", new_empresa_path%>

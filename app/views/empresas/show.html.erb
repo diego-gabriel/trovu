@@ -1,0 +1,7 @@
+<h3><%= @empresa.nombre %></h3>
+
+<%= image_tag @empresa.logotipo.url(:medium)%><br>
+
+<% @empresa.sucursals.each do |s|%>
+	<%=s.direccion%><br>
+<%end%>

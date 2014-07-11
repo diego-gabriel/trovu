@@ -1,0 +1,14 @@
+#locationPicker{
+	height: 300px;
+	width: 300px;
+}
+
+#left-column{
+	float: left;
+	width: 350px;
+}
+
+#right-column{
+	float: left;
+	width: 350px;
+}

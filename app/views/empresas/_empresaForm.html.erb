@@ -1,0 +1,92 @@
+<% @f = form %>
+  <%=render "newScript"%>
+  <div id = "left-column">
+  <h3>Datos de la Empresa</h3>
+  <table>
+  	<tr>
+      <td><%=form.label :nombre, "Nombre:" %></td>
+  	  <td><%=form.text_field :nombre, :required => true%></td>
+  	</tr>
+  	<tr>
+  	  <td><%=form.label :direccion, "Direccion:"%></td>
+  	  <td><%=form.text_field :direccion, :required => true, id: "locNameInput"%></td>
+  	</tr>
+    <tr>
+      <td><%=form.label :latitud%></td>
+      <td><%=form.text_field :latitud, :required => true, id: "latInput"%></td>
+    </tr>
+    <tr>
+      <td><%=form.label :longitud%></td>
+      <td><%=form.text_field :longitud, :required => true, id: "lngInput"%></td>
+    </tr>
+  	<tr>
+  		<td><%=form.label :precioRelativo, "Precio Promedio:"%></td>
+  		<td><%=form.text_field :precioRelativo, :required => true%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :categoria, "Categoria"%></td>
+  		<td><%=select_tag :categoria, options_for_select([["-- Selecciona Categoria --", "..."],["Almuerzo/Cena", "Almuerzo/Cena"],["Desayuno/Merienda", "Desayuno/Merienda"]]), :onchange => "subCategoryChange()"%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :subCategoria, "SubCategoria:"%></td>
+  		<td><div id = "subCategoria"></div></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :telefono, "Telefono:"%></td>
+  		<td><%=form.text_field :telefono, :required => true%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :celular, "Celular:"%></td>
+  		<td><%=form.text_field :celular%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :paginaWeb, "Pagina Web:"%></td>
+  		<td><%=form.text_field :paginaWeb%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :facebook, "Facebook:"%></td>
+  		<td><%=form.text_field :facebook%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :twitter, "Twitter:"%></td>
+  		<td><%=form.text_field :twitter%></td>
+  	</tr>
+  	<tr></tr>
+  </table>
+
+  <h3>Informacion $Trovu</h3>
+
+  <table>
+    <tr>
+      <td><%=form.label :logotipo, "Logo:"%></td>
+      <td><%=form.file_field :logotipo%></td>
+    </tr>
+
+  </table>
+
+  </div>
+
+  <div id = "right-column">
+  <%=render 'locationPicker'%>
+  
+  <h3>Datos del Responsable</h3>
+  <table>
+  	<tr>
+  		<td><%=form.label :responsable, "Responsable a cargo:"%></td>
+  		<td><%=form.text_field :responsable, :required => true%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :telefonoResp, "Telefono:"%></td>
+  		<td><%=form.text_field :telefonoResp%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :celularResp, "Celular:"%></td>
+  		<td><%=form.text_field :celularResp%></td>
+  	</tr>
+  	<tr>
+  		<td><%=form.label :emailResp, "E-mail:"%></td>
+  		<td><%=form.text_field :emailResp%></td>
+  	</tr>
+  </table>
+  </div>
+  <div class = "clear"></div>

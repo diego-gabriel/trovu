@@ -4,7 +4,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :direccion
       t.string :nombre
       t.integer :precioRelativo
-      t.string :logotipo
+      t.attachment :logotipo
       t.integer :estrellas
       t.string :codigoEmpresa
       t.string :paginaWeb

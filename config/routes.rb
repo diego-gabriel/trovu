@@ -1,5 +1,8 @@
 Trovu::Application.routes.draw do
+
+  get '/admin', to: 'admin#index', as: '/' 
   resources :empresas
+
   get "admin/index"
   get "/" => "trovu#index"
   get "/almuerzo_cena" => "trovu#alCen" 

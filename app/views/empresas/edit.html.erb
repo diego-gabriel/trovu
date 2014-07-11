@@ -1,0 +1,7 @@
+<h2>Editar empresa</h2>
+
+<%= form_for @empresa, url: empresa_path(@empresa), method: :patch do |f|%>
+
+	<%=render 'edit_empresaForm', form: f%>
+	<%=f.submit "Guardar"%>
+<% end %>
