@@ -1,0 +1,30 @@
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLE-I4mF-_-5om09EbV5NvcZwDozeAJIg&sensor=false">
+</script>
+
+<script type="text/javascript">
+	var mapOptions = {
+		center: new google.maps.LatLng(<%=lat%>, <%=lng%>),
+		zoom: 16,
+		maxZoom:16,
+		minZoom:16,
+		mapTypeControl: false,
+		streetViewControl: false, 
+		draggable: false,
+		zoomControl: false
+	};
+	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+	var i = 0;
+	<% empresa.sucursals.each do |s| %>
+		i++;
+		new google.maps.Marker({
+			position: new google.maps.LatLng(<%=s.latitud%>, <%=s.longitud%>),
+			map: map,
+			title: "Sucursal "+i,
+			icon: "/assets/favicon.png"
+		});
+	<% end %>
+
+	
+</script>

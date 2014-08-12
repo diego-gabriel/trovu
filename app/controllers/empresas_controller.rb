@@ -26,6 +26,13 @@ class EmpresasController < ApplicationController
 		@f
 	end	
 
+	def update
+		empresa = Empresa.find(params[:id])
+		empresa.update(empresa_params)
+		empresa.sucursals[0].update(direccion: params[:empresa][:direccion])
+		redirect_to empresa
+	end
+
 	def destroy
 
 		@empresa = Empresa.find(params[:id])

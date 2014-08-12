@@ -1,7 +1,27 @@
-<h3><%= @empresa.nombre %></h3>
 
-<%= image_tag @empresa.logotipo.url(:medium)%><br>
+<div class = "left-column">
+	<h3><%= @empresa.nombre %></h3>
+	<%= image_tag @empresa.logotipo.url(:medium)%><br>
 
-<% @empresa.sucursals.each do |s|%>
-	<%=s.direccion%><br>
-<%end%>
+	<%i = 0%>
+	<%lat = 0%>
+	<%lng = 0%>
+	<% @empresa.sucursals.each do |s|%>
+		<%=s.direccion%><br>
+		<%i = i+1%>
+		<%lat += s.latitud%>
+		<%lng += s.longitud%>
+	<%end%>
+
+	<%=link_to "Editar", edit_empresa_path(@empresa)%> <br>
+	<%=link_to "Volver", controller: "admin", action: "index"%>
+
+</div>
+
+<div class = "rigth-column">
+	<div id = "map-canvas"></div>
+</div>
+
+<div class = "clear"></div>
+
+<%=render "admin/show_empresa_sucursals", empresa: @empresa, lat: lat/i, lng: lng/i%>

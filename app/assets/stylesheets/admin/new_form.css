@@ -3,12 +3,12 @@
 	width: 300px;
 }
 
-#left-column{
+.left-column{
 	float: left;
 	width: 350px;
 }
 
-#right-column{
+.right-column{
 	float: left;
 	width: 350px;
 }

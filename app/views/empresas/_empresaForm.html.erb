@@ -1,6 +1,6 @@
 <% @f = form %>
   <%=render "newScript"%>
-  <div id = "left-column">
+  <div class = "left-column">
   <h3>Datos de la Empresa</h3>
   <table>
   	<tr>
@@ -13,15 +13,15 @@
   	</tr>
     <tr>
       <td><%=form.label :latitud%></td>
-      <td><%=form.text_field :latitud, :required => true, id: "latInput"%></td>
+      <td><%=form.number_field :latitud, :required => true, id: "latInput", step: :any%></td>
     </tr>
     <tr>
       <td><%=form.label :longitud%></td>
-      <td><%=form.text_field :longitud, :required => true, id: "lngInput"%></td>
+      <td><%=form.number_field :longitud, :required => true, id: "lngInput", step: :any%></td>
     </tr>
   	<tr>
   		<td><%=form.label :precioRelativo, "Precio Promedio:"%></td>
-  		<td><%=form.text_field :precioRelativo, :required => true%></td>
+  		<td><%=form.number_field :precioRelativo, :required => true%></td>
   	</tr>
   	<tr>
   		<td><%=form.label :categoria, "Categoria"%></td>
@@ -66,7 +66,7 @@
 
   </div>
 
-  <div id = "right-column">
+  <div class = "right-column">
   <%=render 'locationPicker'%>
   
   <h3>Datos del Responsable</h3>

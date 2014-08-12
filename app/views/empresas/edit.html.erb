@@ -1,7 +1,31 @@
 <h2>Editar empresa</h2>
 
+<div id = "edit-form">
 <%= form_for @empresa, url: empresa_path(@empresa), method: :patch do |f|%>
 
 	<%=render 'edit_empresaForm', form: f%>
 	<%=f.submit "Guardar"%>
 <% end %>
+
+
+<%i = 0%>
+<%lat = 0%>
+<%lon = 0%>
+<% @empresa.sucursals.each do |s| %>
+	<% i = i+1%>
+	<% lat += s.latitud %>
+	<% lon += s.longitud %>
+	<%= link_to "Sucursal "+i.to_s, edit_empresa_sucursal_path(@empresa, s) %>
+<% end %>
+</div>
+<% lat = lat / i%>
+<% lon = lon / i%>
+
+<div id = "map-canvas" >
+
+</div>
+
+
+<%= render "admin/show_empresa_sucursals", empresa: @empresa, lat: lat, lng: lon%>
+
+<div class = "clear"></div>

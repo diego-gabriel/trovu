@@ -1,27 +1,28 @@
 <table>
 	<tr>
 		<td><%=form.label :direccion, "Direccion:" %></td>
-		<td><%=form.text_field :direccion%></td>
+		<td><%=form.text_field :direccion, :required => true%></td>
 	</tr>
 	<tr>
 		<td><%=form.label :precioRelativo, "Precio relativo:"%></td>
-		<td><%=form.text_field :precioRelativo%></td>
+		<td><%=form.number_field :precioRelativo, :required => true%></td>
 	</tr>
 	<tr>
 		<td><%=form.label :paginaWeb, "paginaWeb"%></td>
-		<td><%=form.text_field :paginaWeb%></td>
+		<td><%=form.text_field :paginaWeb, :required => true%></td>
 	</tr>
 	<tr>
 		<td><%=form.label :facebook, "Facebook:"%></td>
-		<td><%=form.text_field :facebook%></td>
+		<td><%=form.text_field :facebook, :required => true%></td>
 	</tr>
 	<tr>	
 		<td><%=form.label :twitter, "Twitter:"%></td>
-		<td><%=form.text_field :twitter%></td>
+		<td><%=form.text_field :twitter, :required => true%></td>
 	</tr>
 	<tr>
 		<td><%=form.label :logotipo, "Logo:"%></td>
 		<td><%=form.file_field :logotipo%></td>
 	</tr>
 </table>
+
 
