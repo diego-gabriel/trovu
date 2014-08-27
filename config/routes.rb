@@ -2,7 +2,9 @@ Trovu::Application.routes.draw do
 
   get '/admin', to: 'admin#index', as: '/' 
   resources :empresas do 
-    resources :sucursals
+    resources :sucursals do
+      resources :menu_entries
+    end
   end
 
   get "admin/index"

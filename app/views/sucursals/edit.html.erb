@@ -3,28 +3,46 @@
 <h1><%=@sucursal.empresa.nombre%></h1>
 <h3>Editar Sucursal#<%=@sucursal_id%></h3>
 
+<div class = "edit-form">
+	<%= form_for @sucursal, url: empresa_sucursal_path(@sucursal.empresa, @sucursal), method: :patch do |f|%>
+		
+		<table>
+			<tr>
+				<td><%=f.label :direccion, "Direccion:"%></td>
+				<td><%=f.text_field :direccion, required: :true, id: "locNameInput"%></td>
+			</tr>
+			<tr>
+				<td><%=f.label :latitud, "Latitud:"%></td>
+				<td><%=f.number_field :latitud, required: :true, id: "latInput", step: :any%></td>
+			</tr>
+			<tr>
+				<td><%=f.label :longitud, "Longitud:"%></td>
+				<td><%=f.number_field :longitud, required: :true, id: "lngInput", step: :any%></td>
+			</tr>
 
-<%= form_for @sucursal, url: empresa_sucursal_path(@sucursal.empresa, @sucursal), method: :patch do |f|%>
-	
-	<table>
-		<tr>
-			<td><%=f.label :direccion, "Direccion:"%></td>
-			<td><%=f.text_field :direccion, required: :true, id: "locNameInput"%></td>
-		</tr>
-		<tr>
-			<td><%=f.label :latitud, "Latitud:"%></td>
-			<td><%=f.number_field :latitud, required: :true, id: "latInput", step: :any%></td>
-		</tr>
-		<tr>
-			<td><%=f.label :longitud, "Longitud:"%></td>
-			<td><%=f.number_field :longitud, required: :true, id: "lngInput", step: :any%></td>
-		</tr>
+		</table>
 
-	</table>
 
-	<%=f.submit "Guardar" %>
-<% end %>
+		<%=f.submit "Guardar" %>
+	<% end %>
+	<div id = "new-menu-entry">
+			<h4>Menu:</h4>
+			<%@sucursal.menu_entries.each do |m|%>
+			<table>
+				<tr>
+					<td><%=m.plato%></td>
+					<td><%=m.precio%></td>
+				</tr>
+				<tr><%=m.descripcion%></tr>
+			</table>
+			<% end %>
+		</div>
+		<%=link_to "Añadir menu item", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal), remote: :true%>
+</div>
+
 </div>
 <div class = "rigth-column">
 	<%=render "empresas/locationPicker"%>
 </div>
+
+<div class = "clear"></div>
