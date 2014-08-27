@@ -49,7 +49,8 @@ class TrovuController < ApplicationController
   def locales
   end
 
-  private def prepare(word)
+  private 
+  def prepare(word)
 
     res = "%"
 
