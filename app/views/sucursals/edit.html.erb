@@ -25,19 +25,9 @@
 
 		<%=f.submit "Guardar" %>
 	<% end %>
-	<div id = "new-menu-entry">
-			<h4>Menu:</h4>
-			<%@sucursal.menu_entries.each do |m|%>
-			<table>
-				<tr>
-					<td><%=m.plato%></td>
-					<td><%=m.precio%></td>
-				</tr>
-				<tr><%=m.descripcion%></tr>
-			</table>
-			<% end %>
-		</div>
-		<%=link_to "Añadir menu item", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal), remote: :true%>
+	
+	<%=render 'menu_entries/show', show_edit: :false%>
+	<%=link_to "Editar Menu", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal)%>
 </div>
 
 </div>

@@ -1,6 +1,7 @@
 class SucursalsController < ApplicationController
 	layout "admin"
 	def edit
+		@entries = MenuEntry.all
 		@sucursal = Sucursal.find(params[:id]);
 		@sucursal_id = params[:id];
 	end
@@ -10,7 +11,6 @@ class SucursalsController < ApplicationController
 		sucursal.update(sucursal_params)
 		redirect_to sucursal.empresa
 	end
-
 	private
 	def sucursal_params
 		params.require(:sucursal).permit(:direccion, :latitud, :longitud)

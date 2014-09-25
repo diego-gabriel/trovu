@@ -1,7 +1,7 @@
 
 <h4>Nuevo Menu Item</h4>
 <div class = "bot-left-border">
-<%= form_for :menu_entry, url: empresa_sucursal_menu_entries_path(@empresa, @sucursal), remote: :true do |f|%>
+<%= form_for :menu_entry, url: empresa_sucursal_menu_entries_path(@empresa, @sucursal) do |f|%>
 	<table>
 		<tr>
 			<td><%=f.label :plato, "Nombre item:"%></td>

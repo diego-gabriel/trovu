@@ -1,0 +1,22 @@
+<h4>Menu:</h4>
+<table>
+<tr>
+	<th>Item</th>
+	<th>Precio (Bs.)</th>
+</tr>
+<%@sucursal.menu_entries.each do |m|%>
+	<tr>
+		<td><%=m.plato%></td>
+		<td><%=m.precio%></td>
+
+	</tr>
+	<tr> 
+		<td><i class = "small-font"><%=m.descripcion%></i></td>
+		<td><%=button_to "Eliminar", empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal, m), 
+		method: :delete, data: {confirm: "¿Estas seguro?"}%></td>
+		<%if show_edit%>
+		<td> <%=link_to "Editar", edit_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal, m), remote: :true%></td>
+		<%end%>
+	</tr>
+<% end %>
+</table>
