@@ -2,10 +2,14 @@ class MenuEntriesController < ApplicationController
 	respond_to :html, :js
 	layout "admin"
 
+	def index
+		@empresa = Empresa.find(params[:empresa_id])
+		@sucursal = Sucursal.find(params[:sucursal_id])		
+	end
+
 	def new
 		@empresa = Empresa.find(params[:empresa_id])
 		@sucursal = Sucursal.find(params[:sucursal_id])
-		@entry = MenuEntry.new
 	end
 
 	def create
@@ -13,6 +17,8 @@ class MenuEntriesController < ApplicationController
 		@entry = MenuEntry.new(menu_entry_params)
 		@entry.sucursal = sucursal
 		@entry.save
+
+		redirect_to 
 	end
 
 	def edit

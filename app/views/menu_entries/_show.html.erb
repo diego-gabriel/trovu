@@ -10,7 +10,7 @@
 		<td><%=m.precio%></td>
 
 	</tr>
-	<tr> 
+	<tr class = "menu-entry"> 
 		<td><i class = "small-font"><%=m.descripcion%></i></td>
 		<td><%=button_to "Eliminar", empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal, m), 
 		method: :delete, data: {confirm: "¿Estas seguro?"}%></td>

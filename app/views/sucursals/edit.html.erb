@@ -27,7 +27,7 @@
 	<% end %>
 	
 	<%=render 'menu_entries/show', show_edit: :false%>
-	<%=link_to "Editar Menu", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal)%>
+	<%=link_to "Editar Menu", empresa_sucursal_menu_entries_path(@sucursal.empresa, @sucursal)%>
 </div>
 
 </div>

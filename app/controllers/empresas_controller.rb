@@ -42,7 +42,7 @@ class EmpresasController < ApplicationController
 
 	private 
 	def empresa_params
-		params.require(:empresa).permit(:nombre, :direccion, :paginaWeb, :facebook, :twitter, :logotipo, :precioRelativo)
+		params.require(:empresa).permit(:nombre, :direccion, :paginaWeb, :facebook, :twitter, :logotipo, :precioRelativo, :estrellas)
 	end
 
 end

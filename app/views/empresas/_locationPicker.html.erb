@@ -6,8 +6,10 @@
 	
 	var latInput = $('#latInput');
 	var lngInput = $('#lngInput');
-	var lat = latInput.val() != undefined ? latInput.val() : -17.38533;
-	var lng = lngInput.val() != undefined? lngInput.val() : -66.15442;
+
+	var lat = latInput.val() != "" ? latInput.val() : -17.38533;
+
+	var lng = lngInput.val() != "" ? lngInput.val() : -66.15442;
 
 	$('#locationPicker').locationpicker({
 		location: {latitude: lat, longitude: lng},
