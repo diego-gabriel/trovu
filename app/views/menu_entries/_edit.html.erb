@@ -1,0 +1,10 @@
+<h3>Editar <%=@entry.plato%></h3>
+
+<%= form_for @entry, url: empresa_sucursal_menu_entry_path(@entry.sucursal.empresa, @entry.sucursal, @entry), method: :patch do |f|%>
+
+
+	<%=render 'entry_form', f: f%>
+
+<%=f.submit "Guardar Cambios"%>
+	
+<% end %>

@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<td><%=f.label :plato, "Nombre item:"%></td>
+		<td><%=f.text_field :plato, required: :true%></td>
+	</tr>
+	<tr>
+		<td><%=f.label :precio, "Precio:"%></td>
+		<td><%=f.number_field :precio, required: :true%></td>
+	</tr>
+	<tr>
+		<td><%=f.label :descripcion, "Descripción:"%></td>
+		<td><%=f.text_field :descripcion%></td>
+	</tr>
+</table>

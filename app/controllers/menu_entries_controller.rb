@@ -22,10 +22,16 @@ class MenuEntriesController < ApplicationController
 	end
 
 	def edit
-		@entry = MenuEntry.find(params[:id]);
+		@entry = MenuEntry.find(params[:id])
 	end
 
-	
+	def update
+		entry = MenuEntry.find(params[:id])
+		entry.update(menu_entry_params)
+		respond_to do |format|
+			format.html {redirect_to empresa_sucursal_menu_entries_path(entry.sucursal.empresa, entry.sucursal)}
+		end	
+	end
 
 	def destroy
 		@entry = MenuEntry.find(params[:id])

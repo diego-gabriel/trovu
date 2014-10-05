@@ -1,3 +1,9 @@
-<%=render 'show', show_edit: :true%>
-<div id = "new-menu-entry"></div>
-<%=link_to "Añadir menu item", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal), remote: :true%>
+<div class = "left-column">
+	<%=render 'show', show_edit: :true%>
+	<div id = "new-menu-entry"></div>
+	<%=link_to "Añadir menu item", new_empresa_sucursal_menu_entry_path(@sucursal.empresa, @sucursal), remote: :true%>
+</div>
+<div class = "right-column entry-form">
+	<div id = "edit-entry"></div>
+</div>
+
