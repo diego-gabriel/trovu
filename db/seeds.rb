@@ -30,7 +30,7 @@ tucumanas = SubCategory.create(nombre: "tucumanas", category: catDesMer)
 panaderia = SubCategory.create(nombre: "panaderia", category: catDesMer)
 heladeriaD = SubCategory.create(nombre: "heladeria", category: catDesMer)
 
-=begin
+begin
 paprika = Empresa.create(nombre: "paprika", precioRelativo: 2.3, logotipo: "logoPaprika.png", estrellas: 4, paginaWeb: "www.paprika.com")
 paprikaSuc1 = Sucursal.create(direccion: "calle la paz esq. antezana",
 	latitud: -17.38533, longitud: -66.15442, empresa: paprika)
@@ -71,4 +71,4 @@ MenuEntry.create(plato: "sandwich philadelfia", descripcion: "rico sandwich",
 Turno.create(dia: "martes", horaInicio: 900, horaFin: 2300, sucursal: dumboSuc2)
 Telefono.create(numero: 987654, sucursal: dumboSuc2)
 Publicity.create(descripcion: "estrellas", precio: 60, imagen: "", periodo: 6, empresa: dumbo)
-=end
+end

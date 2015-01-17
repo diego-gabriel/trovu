@@ -54,9 +54,9 @@
   	<tr></tr>
   </table>
 
-  <h3>Informacion $Trovu</h3>
+  <h3><%=form.label :pays, "Informacion $Trovu"%> <%=form.check_box :pays, :onchange => "enableInput()"%></h3>
 
-  <table>
+  <table class = "pays">
     <tr>
       <td><%=form.label :logotipo, "Logo:"%></td>
       <td><%=form.file_field :logotipo%></td>
@@ -73,7 +73,7 @@
 
   <div class = "right-column">
   <%=render 'locationPicker'%>
-  
+  <%=render 'payedScript'%>
   <h3>Datos del Responsable</h3>
   <table>
   	<tr>

@@ -13,6 +13,17 @@
 		<%lng += s.longitud%>
 	<%end%>
 
+	<% if @empresa.pays%>
+		<p class = "border">Empresa <b>Trovu</b></p>
+	<%else%>
+		<p><i>Empresa normal</i></p>
+	<% end %>
+
+	<p>
+		<i>Afiliada en: <%= @empresa.created_at%></i>
+
+	</p>
+
 	<%=link_to "Editar", edit_empresa_path(@empresa)%> <br>
 	<%=link_to "Volver", controller: "admin", action: "index"%>
 

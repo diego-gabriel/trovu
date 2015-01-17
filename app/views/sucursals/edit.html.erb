@@ -25,9 +25,11 @@
 
 		<%=f.submit "Guardar" %>
 	<% end %>
-	
+	<% if @sucursal.empresa.pays%>
 	<%=render 'menu_entries/show', show_edit: :false%>
 	<%=link_to "Editar Menu", empresa_sucursal_menu_entries_path(@sucursal.empresa, @sucursal)%>
+
+	<%end%>
 </div>
 
 </div>

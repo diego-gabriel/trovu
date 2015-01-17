@@ -51,3 +51,18 @@ div.gradient{
 #footer{
 	height: 200px; 
 }
+
+#headerTitle a{
+	color: white;
+	text-decoration: none;
+}
+
+#headerTitle a:hover{
+	color: #ddd;
+	text-decoration: underline;
+}
+
+#headerTitle a:active{
+	color: black;
+
+}

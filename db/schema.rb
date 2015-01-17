@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140329042015) do
     t.string   "paginaWeb"
     t.string   "facebook"
     t.string   "twitter"
+    t.boolean  "pays"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

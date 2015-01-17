@@ -10,7 +10,7 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :paginaWeb
       t.string :facebook
       t.string :twitter
-
+      t.boolean :pays
       t.timestamps
     end
   end

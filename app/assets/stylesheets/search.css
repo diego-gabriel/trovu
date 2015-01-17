@@ -52,6 +52,7 @@
 #map-canvas{
 	height: 400px;
 	width: 400px;
+	margin-left: 150px;
 	float: right;
 
 }
