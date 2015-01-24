@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	var isDisabled = false;
+
+	function enableInput(){
+		console.log("ok");
+		isDisabled = !isDisabled;
+		$('.pays input, .pays select').prop("disabled", isDisabled);
+	};
+
+	$('.payed').ready(function(){
+		enableInput();
+	});
+	
+</script>

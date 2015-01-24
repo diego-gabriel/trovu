@@ -1,0 +1,15 @@
+
+<h3><%=form.label :pays, "Informacion $Trovu"%> <%=form.check_box :pays, :onchange => "enableInput()"%></h3>
+
+<table class = "pays">
+    <tr>
+      <td><%=form.label :logotipo, "Logo:"%></td>
+      <td><%=form.file_field :logotipo%></td>
+    </tr>
+    <tr>
+      <td>Estrellas: </td>
+      <td><%=form.select :estrellas, options_for_select(["0", "1", "2", "3", "4", "5"], "0")%></td>
+    </tr>
+  </table>
+
+<%=render 'payedScript'%>

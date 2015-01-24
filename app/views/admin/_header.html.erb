@@ -2,7 +2,9 @@
 	
 	<div id = "headerCont">
 		<%= link_to (image_tag "logo-border280x125.png", id: "logoImg"), controller: "admin", action: "index"%>
-		<h1>Portal Administrativo</h1>
+		<h1 id = 'headerTitle'>
+			<%=link_to "Portal Administrativo", controller: "admin", action: "index"%>
+		</h1>
 	</div>
 
 </div>

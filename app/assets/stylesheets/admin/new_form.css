@@ -24,7 +24,22 @@
 	margin-right: 30px;
 }
 
-.entry-form{
+div.border{
+	margin-top: 15px;
+	padding: 5px;
+	width: 220px;
+}
+
+div.border-large{
+	width: 500px;
+}
+
+div.border p{
+	margin: 0px;
+	padding: 0px;
+}
+
+.entry-form, div.border{
 	padding: 10px;
 	border: 3px solid #CD1210;
 	border-radius: 5px;

@@ -13,6 +13,25 @@
 		<%lng += s.longitud%>
 	<%end%>
 
+	<% if @empresa.pays%>
+		<div class = "border">
+
+			<p >Empresa <b>Trovu</b></p><br>
+			<div class = "small-font">
+			<i>Suscripcion termina en: <%=@empresa.expiration_date.to_s%></i><br>
+			<%=link_to "Ver suscripciones", empresa_suscripciones_path(@empresa), class: 'small-font'%>
+			<p><b>Cuenta de visitas:</b> <%= @empresa.visit_count == nil ? 0 :  @empresa.visit_count %></p>
+		</div>
+		</div>
+
+	<%else%>
+		<p><i>Empresa normal</i></p>
+	<% end %>
+
+	<p>
+		<i>Afiliada en: <%= @empresa.created_at%></i>
+	</p>
+
 	<%=link_to "Editar", edit_empresa_path(@empresa)%> <br>
 	<%=link_to "Volver", controller: "admin", action: "index"%>
 
