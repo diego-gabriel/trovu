@@ -13,7 +13,8 @@ class EmpresasController < ApplicationController
 								longitud: params[:empresa][:longitud],
 								empresa: empresa)
 		sucursal.save
-
+		expireDate = Date.today + 1.year
+		suscription = TrovuSuscription.create(empresa: empresa, expires_on: expireDate);
 		redirect_to controller: "admin", action: "index"
 	end
 
@@ -38,6 +39,16 @@ class EmpresasController < ApplicationController
 		@empresa = Empresa.find(params[:id])
 		@empresa.destroy
 		redirect_to controller: "admin", action: "index"
+	end
+
+	def suscriptions
+		@empresa = Empresa.find(params[:empresa_id])
+		@suscriptions = @empresa.trovu_suscriptions
+	end
+
+	def count_a_view	
+		empresa = Empresa.find(params[:empresa_id])
+		empresa.count_a_view
 	end
 
 	private 

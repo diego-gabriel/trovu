@@ -1,18 +1,25 @@
 
+<%eCounter = 0%>
 <% @empresas.each do |e| %>
+	
+	<%= form_tag empresa_count_a_view_path(e), remote: true, class: "e-counter", counter: eCounter do%>
+		<% eCounter += 1 %>
+		<h3 class = "empresa"> <%= e.nombre%> 
+			<% if e.pays && e.on_date %>
+			<%= image_tag "stars/"+e.estrellas.to_s+"stars.png", class: "star"%>
+			<% end %>
+		</h3>
+	<% end %>
 
-	<h3 class = "empresa"> <%= e.nombre%> 
-		
-		<%= image_tag "stars/"+e.estrellas.to_s+"stars.png", class: "star"%>
-	</h3>
 
-	<div class = "e-description" style = "background-image: url( /assets/<%=e.logotipo %> ); background-position: center center; background-repeat: no-repeat;"> 
 
-		
+	<div class = "e-description" style = "background-image: url(<%=e.get_logo %> ); background-position: center center; background-repeat: no-repeat;"> 
+
+	<% i = 1%>		
 		<% e.sucursals.each do |s| %>	
 			<div class = "s-description">
 				<p>
-					<strong> Sucursal nº <%=s.id%>: </strong> 
+					<strong> Sucursal nº <%= i %>: </strong> 
 					<%= s.direccion %> 
 				</p>
 				<p><strong> Telefono(s): </strong> 
@@ -22,6 +29,7 @@
 				</p>
 				<br>
 			</div>
+			<% i += 1%>
 		<% end %> 
 
 		<a class = "e-web" href="//<%=e.paginaWeb%>"><%=e.paginaWeb%></a>

@@ -1,0 +1,15 @@
+<h2><%=@empresa.nombre%> suscripciones:</h2>
+
+<p>Total: <%=@suscriptions.count%></p>
+<% sID = 1 %>
+<% @suscriptions.each do |aSuscription| %>
+	
+	<div class = 'border border-large'>
+	<p><b>Suscripcion <%= sID %></b></p><br>
+	<div class = 'small-font'>
+	<p>Fecha de suscripcion: <%= aSuscription.created_at.to_s %></p>
+	<p>Fecha de expiracion: <%= aSuscription.expires_on.to_s%></p>
+	</div>
+	</div>
+	<% sID += 1 %>
+<%end%>

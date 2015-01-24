@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329042015) do
+ActiveRecord::Schema.define(version: 20150122213200) do
 
   create_table "categories", force: true do |t|
     t.string   "nombre"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140329042015) do
     t.boolean  "pays"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "visit_count"
   end
 
   create_table "menu_entries", force: true do |t|
@@ -100,6 +101,15 @@ ActiveRecord::Schema.define(version: 20140329042015) do
   end
 
   add_index "telefonos", ["sucursal_id"], name: "index_telefonos_on_sucursal_id"
+
+  create_table "trovu_suscriptions", force: true do |t|
+    t.integer  "empresa_id"
+    t.date     "expires_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trovu_suscriptions", ["empresa_id"], name: "index_trovu_suscriptions_on_empresa_id"
 
   create_table "turnos", force: true do |t|
     t.string   "dia"
