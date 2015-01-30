@@ -1,3 +1,4 @@
 class TrovuSuscription < ActiveRecord::Base
-	belongs_to :empresa
+  belongs_to :empresa
+  has_one :payment, as: :payable
 end
