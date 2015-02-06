@@ -3,28 +3,33 @@
 <% i = 0 %>
 
 <table id = "enterpriseList">
-	<tr>
-	<%@empresas.each do |e|%>
 
-		<td class = "aEnterprise">
-		<div class = "adm-empresa">
-			<h3><%=e.nombre%></h3>
-			<%=image_tag e.logotipo.url(:mini)%><br>
-			<%=link_to 'Ver', empresa_path(e)%>
-			<%=link_to 'Editar', edit_empresa_path(e)%>
-			<%=button_to 'Delete', empresa_path(e), method: :delete, data: {confirm: "esta seguro?"}%>
+	<% if @empresas.any? %>
 
-		</div>
-		</td>
-		<% i += 1 %>
-		<% if ((i % 5) == 0) %>
-			</tr><tr>
-		<% end %>
+		<tr>
+		<%@empresas.each do |e|%>
 
-	<%end%>
-	</tr>
+			<td class = "aEnterprise">
+			<div class = "adm-empresa">
+				<h3><%=e.nombre%></h3>
+				<%=image_tag e.logotipo.url(:mini)%><br>
+				<%=link_to 'Ver', empresa_path(e)%>
+				<%=link_to 'Editar', edit_empresa_path(e)%>
+				<%=button_to 'Delete', empresa_path(e), method: :delete, data: {confirm: "esta seguro?"}%>
 
+			</div>
+			</td>
+			<% i += 1 %>
+			<% if ((i % 5) == 0) %>
+				</tr><tr>
+			<% end %>
 
+		<%end%>
+		</tr>
+
+	<% else %>
+		<i>Aun no hay empresas afiliadas</i>
+	<% end %>
 </table>
 
 

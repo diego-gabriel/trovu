@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122213200) do
+ActiveRecord::Schema.define(version: 20150130034659) do
 
   create_table "categories", force: true do |t|
     t.string   "nombre"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 20150122213200) do
   end
 
   add_index "menu_entries", ["sucursal_id"], name: "index_menu_entries_on_sucursal_id"
+
+  create_table "payments", force: true do |t|
+    t.integer  "payable_id"
+    t.string   "payable_type"
+    t.boolean  "payed",        default: false
+    t.date     "payment_date"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["payable_id", "payable_type"], name: "index_payments_on_payable_id_and_payable_type"
 
   create_table "publicities", force: true do |t|
     t.date     "fechaInicio"

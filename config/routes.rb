@@ -5,7 +5,8 @@ Trovu::Application.routes.draw do
     resources :sucursals do
       resources :menu_entries
     end
-    get "/suscripciones" => 'empresas#suscriptions'
+    resources :trovu_suscriptions 
+    resources :payments
     post "/count_a_view" => 'empresas#count_a_view'
   end
 

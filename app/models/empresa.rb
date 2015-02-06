@@ -1,3 +1,5 @@
+
+
 class Empresa < ActiveRecord::Base
 	has_many :sucursals
 	has_many :publicidads
@@ -9,6 +11,30 @@ class Empresa < ActiveRecord::Base
     :default_url => '/assets/defaults/rest/restaurant-default_:style.png'
     validates_attachment_size :logotipo, :less_than => 1.megabytes
   	validates_attachment_content_type :logotipo, :content_type => /\Aimage\/.*\Z/
+
+    after_create :check_suscribed
+    after_update :check_pays
+
+    private
+    def check_pays
+      if (self.pays_changed? && self.pays == true)
+        add_suscription
+      end
+    end
+
+    private
+    def check_suscribed
+      if (self.pays)
+        add_suscription
+      end
+    end
+
+    private
+    def add_suscription
+        
+        expireDate = Date.today + 1.year
+        suscription = TrovuSuscription.create(empresa: self, expires_on: expireDate);
+    end
 
   	public
   	def expiration_date
