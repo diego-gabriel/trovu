@@ -1,0 +1,15 @@
+<h2>Tipos de pago disponibles</h2>
+
+<%if @types.any?%>
+	<%= render @types %>
+<% else %>
+	<i>Aun tipos de pago registrados</i>
+<% end %>
+<br>
+<br>
+<br>
+<div class = "small-font">
+	<%= link_to "Añadir tipo de pago", new_payment_type_path %>
+	<br>
+	<%= link_to "Volver", controller: "admin", action: "index"%>
+</div>

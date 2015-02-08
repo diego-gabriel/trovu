@@ -1,4 +1,4 @@
-<h2><%=@empresa.nombre%> suscripciones:</h2>
+<h2><%=link_to @empresa.nombre, empresa_path(@empresa)%> suscripciones:</h2>
 
 <p>Total: <%=@suscriptions.count%></p>
 <% sID = 1 %>

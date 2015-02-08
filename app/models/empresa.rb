@@ -1,5 +1,3 @@
-
-
 class Empresa < ActiveRecord::Base
 	has_many :sucursals
 	has_many :publicidads
@@ -69,5 +67,21 @@ class Empresa < ActiveRecord::Base
         logo = self.logotipo
       end
       return logo
+    end
+
+    public
+    def debt_payments
+
+      payments = []
+      TrovuSuscription.includes(:payment).joins(:payment).where(empresa: self, payments: {payed: false}).find_each do |aSuscription|
+        payments<<aSuscription.payment
+      end
+
+      payments
+    end
+
+    public
+    def has_any_debt
+      return debt_payments.size > 0
     end
 end

@@ -21,7 +21,11 @@
 			<i>Suscripcion termina en: <%=@empresa.expiration_date.to_s%></i><br>
 			<%=link_to "Ver suscripciones", empresa_trovu_suscriptions_path(@empresa), class: 'small-font'%>
 			<p><b>Cuenta de visitas:</b> <%= @empresa.visit_count == nil ? 0 :  @empresa.visit_count %></p>
-		</div>
+			<%if @empresa.has_any_debt%>
+				<p>Esta empresa tiene deudas. <%=link_to "Ver deudas", empresa_debts_path(@empresa)%></p>
+				
+			<%end%>
+			</div>
 		</div>
 
 	<%else%>
@@ -31,6 +35,7 @@
 	<p>
 		<i>Afiliada en: <%= @empresa.created_at%></i>
 	</p>
+
 
 	<%=link_to "Editar", edit_empresa_path(@empresa)%> <br>
 	<%=link_to "Volver", controller: "admin", action: "index"%>

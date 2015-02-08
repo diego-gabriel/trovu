@@ -5,6 +5,6 @@ class TrovuSuscription < ActiveRecord::Base
 
   private 
   def add_pendent_pay
-  	Payment.create(payable: self, amount: 50)
+  	Payment.create(payable: self)
   end
 end

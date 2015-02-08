@@ -8,7 +8,10 @@ Trovu::Application.routes.draw do
     resources :trovu_suscriptions 
     resources :payments
     post "/count_a_view" => 'empresas#count_a_view'
+    get "/debts" => 'empresas#debts'
   end
+
+  resources :payment_types
 
   get "admin/index"
   get "/" => "trovu#index"

@@ -12,7 +12,11 @@ class EmpresasController < ApplicationController
 								longitud: params[:empresa][:longitud],
 								empresa: empresa)
 
-		redirect_to controller: "admin", action: "index"
+		if empresa.pays
+			redirect_to edit_empresa_payment_path(empresa, empresa.trovu_suscriptions.last.payment)
+		else
+			redirect_to controller: "admin", action: "index"
+		end
 	end
 
 	def show
@@ -41,6 +45,11 @@ class EmpresasController < ApplicationController
 	def count_a_view	
 		empresa = Empresa.find(params[:empresa_id])
 		empresa.count_a_view
+	end
+
+	def debts
+		@empresa = Empresa.select(:nombre, :id).find(params[:empresa_id])
+		@payments = @empresa.debt_payments
 	end
 
 	private 

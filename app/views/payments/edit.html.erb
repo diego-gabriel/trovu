@@ -1,1 +1,18 @@
-<%=@payment.payable.empresa.nombre%>
+<h2><%=@payment.payable.empresa.nombre%></h2>
+<h4>Pago por: <%=@payment.payable.class%></h4>
+
+<%= form_for @payment, url: empresa_payment_path(@payment.payable.empresa, @payment), method: :patch do |f|%>
+<table>
+	<tr>
+		<td><%=f.label :payment_type, "Tipo de pago: "%></td>
+		<td><%=f.select :payment_type, PaymentType.all.map{|p| [p.name + "  " + p.amount.to_s + "Bs.", p.id]}, required: true%></td>
+	</tr>
+	<tr>
+		<td><%=f.label :payed, "Pago abonado "%></td>
+		<td><%=f.check_box :payed%></td>
+	</tr>
+
+
+</table>
+	<%=f.submit%>
+<% end %>
